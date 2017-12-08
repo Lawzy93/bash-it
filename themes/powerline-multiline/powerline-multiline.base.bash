@@ -53,7 +53,7 @@ function __powerline_prompt_command {
     LEFT_PROMPT+="\033[${RIGHT_PROMPT_LENGTH}D"
   fi
 
-  PS1="${LEFT_PROMPT}${RIGHT_PROMPT}\n$(__powerline_last_status_prompt ${last_status})${PROMPT_CHAR} "
+  PS1="${LEFT_PROMPT}${RIGHT_PROMPT}\n$(__powerline_last_status_prompt ${last_status})${POWERLINE_PROMPT_CHAR} "
 
   ## cleanup ##
   unset LAST_SEGMENT_COLOR \
