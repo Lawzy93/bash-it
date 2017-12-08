@@ -27,6 +27,7 @@ function __powerline_right_segment {
 function __powerline_prompt_command {
   local last_status="$?" ## always the first
   local separator_char="${POWERLINE_LEFT_SEPARATOR}"
+  local prompt_char="${POWERLINE_PROMPT_CHAR}"
   local move_cursor_rightmost='\033[500C'
 
   LEFT_PROMPT=""
@@ -53,7 +54,7 @@ function __powerline_prompt_command {
     LEFT_PROMPT+="\033[${RIGHT_PROMPT_LENGTH}D"
   fi
 
-  PS1="${LEFT_PROMPT}${RIGHT_PROMPT}\n$(__powerline_last_status_prompt ${last_status})${POWERLINE_PROMPT_CHAR} "
+  PS1="${LEFT_PROMPT}${RIGHT_PROMPT}\n$(__powerline_last_status_prompt ${last_status})${prompt_char} "
 
   ## cleanup ##
   unset LAST_SEGMENT_COLOR \
